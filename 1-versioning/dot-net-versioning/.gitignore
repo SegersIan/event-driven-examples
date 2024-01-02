@@ -127,8 +127,6 @@ ipch/
 *.userosscache
 *.sln.docstates
 *.cache
-*.csproj
-*.sln
 *.suo
 *.tmp
 *.user
