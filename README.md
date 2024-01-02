@@ -1,2 +1,4 @@
-# event-driven-examples
-Examples of different Event Driven implementation, styles, versioning, and such.
+# Event Driven Examples
+
+This repository has multiple projects, each demonstrating a specific style or concept related to Event Driven architecture.
+
