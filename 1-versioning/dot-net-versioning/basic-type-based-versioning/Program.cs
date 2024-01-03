@@ -1,4 +1,5 @@
 ﻿using basic_type_based_versioning;
+using basic_type_based_versioning.Model;
 
 // Setup
 var myMicroService = new MyMicroService();
@@ -8,7 +9,7 @@ var myMicroService = new MyMicroService();
  */
 Console.WriteLine(">>> Use Case 1: Handle Incoming Event Stream - Handle Received Payment\n\n");
 
-var incomingPaymentEventA = new basic_type_based_versioning.Model.PaymentReceived("wallet-2000", 150, "ian");
+var incomingPaymentEventA = new PaymentReceived("wallet-2000", 150, "ian");
 myMicroService.HandleEventWithoutPublishingDownstreamEvents(incomingPaymentEventA);
 
 Console.WriteLine("\n\n");
@@ -18,7 +19,7 @@ Console.WriteLine("\n\n");
  */
 Console.WriteLine(">>> Use Case 2: Handle Incoming Event Stream + Publish Downstream Events - Handle Received Payment\n\n");
 
-var incomingPaymentEventB = new basic_type_based_versioning.Model.PaymentReceived("wallet-3000", 300, "john");
+var incomingPaymentEventB = new PaymentReceived("wallet-3000", 300, "john");
 myMicroService.HandleEventWithPublishingDownstreamEvents(incomingPaymentEventB);
 
 Console.WriteLine("\n\n");

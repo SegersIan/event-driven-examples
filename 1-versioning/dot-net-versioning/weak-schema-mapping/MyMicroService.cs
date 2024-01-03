@@ -1,15 +1,17 @@
-﻿using basic_type_based_versioning.Model;
-using basic_type_based_versioning.Service;
-using core.Model;
+﻿using core.Model;
+using weak_schema_mapping.Model;
+using weak_schema_mapping.Model.weak_schema_mapping.Model;
+using weak_schema_mapping.Service;
 
-namespace basic_type_based_versioning
+namespace weak_schema_mapping
 {
     internal class MyMicroService
     {
         public MyMicroService() { }
 
         // We consume a specific version, as we make sure we listen to an event stream with specific event version.
-        public void HandleEventWithoutPublishingDownstreamEvents(PaymentReceived e) {
+        public void HandleEventWithoutPublishingDownstreamEvents(PaymentReceived e)
+        {
             Console.WriteLine($"Received payment from {e.Payer} for amount of {e.Amount}");
 
             // 1. Take event and map to internal object to call business logic
@@ -48,29 +50,18 @@ namespace basic_type_based_versioning
             return AggregateEventsIntoWallets(groupedWalletEvents);
         }
 
-        private List<core.Model.Event> MapActivityToEvent(List<Activity> activities)
+        private List<Event> MapActivityToEvent(List<Activity> activities)
         {
-            var events = new List<core.Model.Event>();
+            var events = new List<Event>();
+
             foreach (var activity in activities)
             {
-                if (activity is WalletCreatedActivity)
-                {
-                    var castedActivity = (WalletCreatedActivity) activity;
-                    events.Add(new Model.WalletCreatedEvent_v1(castedActivity.WalletId, castedActivity.Owner));
-                }
-                if (activity is WalletBalanceUpdatedActivity)
-                {
-                    // NOTE: Here upcasting had to happen! So in this example my internal model still had to change to adapt to this change,
-                    // but might not be always the case. Depends if the property for ChangedBy was nearby or not.
-                    // One could also create both versions now, and the EventStream would know how do work with that.
-                    var castedActivity = (WalletBalanceUpdatedActivity) activity;
-                    events.Add(new Model.WalletBalanceUpdatedEvent_v2(castedActivity.WalletId, castedActivity.Amount, castedActivity.ChangedBy));
-                }
+
             }
 
             return events;
         }
-    
+
         private IDictionary<string, List<WalletEvent>> GroupEventsByWalletId(List<WalletEvent> walletEvents)
         {
             IDictionary<string, List<WalletEvent>> groupedEvents = new Dictionary<string, List<WalletEvent>>();
@@ -106,7 +97,7 @@ namespace basic_type_based_versioning
             {
                 if (walletEvent is WalletCreatedEvent_v1)
                 {
-                    wallet.Owner = ((WalletCreatedEvent_v1) walletEvent).Owner;
+                    wallet.Owner = ((WalletCreatedEvent_v1)walletEvent).Owner;
                 }
 
                 if (walletEvent is WalletBalanceUpdatedEvent_v1)
@@ -129,7 +120,4 @@ namespace basic_type_based_versioning
 
         }
     }
-  
 }
-
-

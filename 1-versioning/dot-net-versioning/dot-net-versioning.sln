@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "weak-schema-mapping", "weak-schema-mapping\weak-schema-mapping.csproj", "{ECB4A8FC-BDEF-452D-99A5-767E24835649}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "playground", "playground\playground.csproj", "{EEFAB44D-7960-4EAB-8535-F5198118E894}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,14 @@ Global
 		{0DD32EC9-5161-4E04-95E1-BC0CD11281A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DD32EC9-5161-4E04-95E1-BC0CD11281A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DD32EC9-5161-4E04-95E1-BC0CD11281A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECB4A8FC-BDEF-452D-99A5-767E24835649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECB4A8FC-BDEF-452D-99A5-767E24835649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECB4A8FC-BDEF-452D-99A5-767E24835649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECB4A8FC-BDEF-452D-99A5-767E24835649}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEFAB44D-7960-4EAB-8535-F5198118E894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEFAB44D-7960-4EAB-8535-F5198118E894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEFAB44D-7960-4EAB-8535-F5198118E894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEFAB44D-7960-4EAB-8535-F5198118E894}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

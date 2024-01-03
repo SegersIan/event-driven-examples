@@ -1,13 +1,13 @@
-﻿using basic_type_based_versioning.Model;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using weak_schema_mapping.Model.weak_schema_mapping.Model;
 
-namespace basic_type_based_versioning.Service
+namespace weak_schema_mapping.Service
 {
     internal static class Repository
     {
         public static List<WalletEvent> getAllEvents()
         {
-            var directoryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Data\WithSchema\Wallet");
+            var directoryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Data\WithoutSchema\Wallet");
             List<string> fileNames = GetAllJsonFiles(directoryPath);
 
             var allEvents = new List<WalletEvent>();
