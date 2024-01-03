@@ -1,0 +1,6 @@
+{
+  "Schema": "wallet_deleted",
+  "SchemaVersion": "v1",
+  "EventId": "event-5",
+  "WalletId": "wallet-1000"
+}

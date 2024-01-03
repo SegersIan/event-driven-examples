@@ -7,16 +7,55 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="Data\VinylPressStarted_v1.json">
+    <None Update="Data\VinylPressStarted_Without_Schema_v1.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Data\VinylPressStarted_v2.json">
+    <None Update="Data\VinylPressStarted_With_Schema_v1.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Data\VinylPressStarted_v3.json">
+    <None Update="Data\VinylPressStarted_Without_Schema_v2.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Data\VinylPressStarted_v4.json">
+    <None Update="Data\VinylPressStarted_With_Schema_v2.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\VinylPressStarted_Without_Schema_v3.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\VinylPressStarted_With_Schema_v3.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\VinylPressStarted_Without_Schema_v4.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\VinylPressStarted_With_Schema_v4.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\WithSchema\Wallet\002_Wallet_1000_Balance_Updated_v1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\WithSchema\Wallet\003_Wallet_1000_Balance_Updated_v1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\WithSchema\Wallet\004_Wallet_1000_Balance_Updated_v1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\WithSchema\Wallet\006_Wallet_1001_Created_v1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\WithSchema\Wallet\007_Wallet_1001_Balance_Updated_v1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\WithSchema\Wallet\008_Wallet_1001_Balance_Updated_v1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\WithSchema\Wallet\009_Wallet_1001_Balance_Updated_v1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\WithSchema\Wallet\005_Wallet_1000_Deleted_v1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\WithSchema\Wallet\001_Wallet_1000_Created_v1.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

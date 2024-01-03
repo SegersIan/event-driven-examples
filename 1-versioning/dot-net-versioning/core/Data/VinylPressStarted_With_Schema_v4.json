@@ -1,0 +1,7 @@
+{
+  "Schema": "vinyl_press_started",
+  "SchemaVersion": "v4",
+  "EventId": "event-id-4",
+  "CustomerOrderId": "order-1000",
+  "PressMachineId": "vinyl-press-a"
+}

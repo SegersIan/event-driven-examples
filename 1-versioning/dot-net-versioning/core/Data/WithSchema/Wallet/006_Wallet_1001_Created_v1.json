@@ -1,0 +1,7 @@
+{
+  "Schema": "wallet_created",
+  "SchemaVersion": "v1",
+  "EventId": "event-6",
+  "WalletId": "wallet-1001",
+  "Owner" :  "John"
+}

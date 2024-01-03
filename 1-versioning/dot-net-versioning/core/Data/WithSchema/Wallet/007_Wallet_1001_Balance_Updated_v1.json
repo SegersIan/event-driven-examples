@@ -1,0 +1,7 @@
+{
+  "Schema": "wallet_balance_updated",
+  "SchemaVersion": "v1",
+  "EventId": "event-7",
+  "WalletId": "wallet-1001",
+  "amount":  500
+}

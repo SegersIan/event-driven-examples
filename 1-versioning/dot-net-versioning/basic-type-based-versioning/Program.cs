@@ -1,14 +1,44 @@
-﻿using core.Model;
-using basic_type_based_versioning;
-using basic_type_based_versioning.Model;
+﻿using basic_type_based_versioning;
 
-VinylPressStartedEvent_v1 vinylPressStartedEvent_v1 = Utils.Deserialize<VinylPressStartedEvent_v1>("VinylPressStarted_v1.json");
-VinylPressStartedEvent_v2 vinylPressStartedEvent_v2 = Utils.Deserialize<VinylPressStartedEvent_v2>("VinylPressStarted_v2.json");
-VinylPressStartedEvent_v3 vinylPressStartedEvent_v3 = Utils.Deserialize<VinylPressStartedEvent_v3>("VinylPressStarted_v3.json");
-VinylPressStartedEvent_v4 vinylPressStartedEvent_v4 = Utils.Deserialize<VinylPressStartedEvent_v4>("VinylPressStarted_v4.json");
+// Setup
+var myMicroService = new MyMicroService();
 
-Console.WriteLine("Events....");
-Console.WriteLine(vinylPressStartedEvent_v1.ToString());
-Console.WriteLine(vinylPressStartedEvent_v2.ToString());
-Console.WriteLine(vinylPressStartedEvent_v3.ToString());
-Console.WriteLine(vinylPressStartedEvent_v4.ToString());
+/*
+ * Use Case 1: Handle Incoming Event Stream - Handle Received Payment
+ */
+Console.WriteLine(">>> Use Case 1: Handle Incoming Event Stream - Handle Received Payment\n\n");
+
+var incomingPaymentEventA = new basic_type_based_versioning.Model.PaymentReceived("wallet-2000", 150, "ian");
+myMicroService.HandleEventWithoutPublishingDownstreamEvents(incomingPaymentEventA);
+
+Console.WriteLine("\n\n");
+
+/*
+ * Use Case 2: Handle Incoming Event Stream + Publish Downstream Events - Handle Received Payment
+ */
+Console.WriteLine(">>> Use Case 2: Handle Incoming Event Stream + Publish Downstream Events - Handle Received Payment\n\n");
+
+var incomingPaymentEventB = new basic_type_based_versioning.Model.PaymentReceived("wallet-3000", 300, "john");
+myMicroService.HandleEventWithPublishingDownstreamEvents(incomingPaymentEventB);
+
+Console.WriteLine("\n\n");
+
+/*
+ * Use Case 3: Fetch All Historical Wallet Events
+ */
+Console.WriteLine(">>>  Use Case 3: Fetch All Historical Wallet Events\n\n");
+
+var allWalletEvents = myMicroService.GetAllWalletEvents();
+allWalletEvents.ForEach(Console.WriteLine);
+
+Console.WriteLine("\n\n");
+
+/*
+ * Use Case 4: Aggregate All Historical Wallet Events Into Wallets
+ */
+Console.WriteLine(">>>  Use Case 4: Aggregate All Historical Wallet Events Into Wallets\n\n");
+
+var allWallets = myMicroService.GetAllWallets();
+allWallets.ForEach(Console.WriteLine);
+
+Console.WriteLine("\n\n");

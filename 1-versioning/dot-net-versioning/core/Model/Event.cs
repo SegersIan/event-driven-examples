@@ -13,7 +13,7 @@ namespace core.Model
 
         public Event()
         {
-            EventId = string.Empty;
+            EventId = Guid.NewGuid().ToString();
         }
 
         public override string ToString()
@@ -32,6 +32,23 @@ namespace core.Model
             }
 
             return sb.ToString();
+        }
+    }
+
+    public class EventWithoutSchema: Event { }
+
+    public class EventWithSchema : Event { 
+        public string Schema { get; set; }
+        public string SchemaVersion { get; set; }
+        public EventWithSchema() : base() {
+            Schema = string.Empty;
+            SchemaVersion = string.Empty;
+        }
+
+        public EventWithSchema(string schema, string schemaVersion = "v1") : base() 
+        {
+            Schema = schema;
+            SchemaVersion = schemaVersion;
         }
     }
 
